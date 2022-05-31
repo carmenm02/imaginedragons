@@ -13,6 +13,8 @@ class UserAccount:
 
 #Ejercicio 1B
     def follow(self,user):
+        if not isinstance(user,UserAccount):
+            raise Exception("El usuario no es válido")
         if user not in self.following:
             self.following.append(user)
             user.followers.append(self)
