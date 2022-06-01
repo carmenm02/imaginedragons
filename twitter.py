@@ -62,4 +62,16 @@ class DirectMessage(Tweet):
     #2c
     def __str__(self):
         return f"Mensaje directo de {self.sender.nombre}a{self.receiver.nombre}. Tweet: {self.message}.Publicado: {time.time(int(self.tiempo))}"
-        
+
+class Retweet(Tweet):
+    def __init__(self,*args,**kwargs):
+        if "tweet_to_retweet" not in kwargs:
+            raise Exception("No se ha especificado ningun tweet")
+        tweet_to_retweet = kwargs.pop('tweet_to_retweet')
+        if not isinstance(tweet_to_retweet,Tweet):
+            raise Exception("No es un tweet")
+        self.tweet_original = tweet_to_retweet
+        super().__init__(*args,**kwargs)
+    #2c
+    def __str__(self):
+        return f"Retweet de {self.sender.nombre}. Tweet: {self.message}. Tweet original: {self.tweet_original.message} Publicado: {time.time(int(self.tiempo))}"
