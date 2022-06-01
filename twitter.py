@@ -76,3 +76,21 @@ class Retweet(Tweet):
     def __str__(self):
         return f"Retweet de {self.sender.nombre}. Tweet: {self.message}. Tweet original: {self.tweet_original.message} Publicado: {time.time(int(self.tiempo))}"
 #El ejercicio 2D lo he creado en otra pagina, aqui procedo a aplicar los cambios que he comentado en ella
+
+class UserAccount:
+    def __init__(self,nombre: str, email: str):
+        self.nombre = nombre
+        self._email = email
+        self.tweets = []
+        self.followers = []
+        self.timeline = []
+        self.following = []
+    def follow(self,user):
+        if not isinstance(user,UserAccount):
+            raise Exception("El usuario no es válido")
+        if user not in self.following:
+            self.following.append(user)
+            user.followers.append(self)
+        else:
+            print("Ya sigues a :" + user.nombre)
+    
