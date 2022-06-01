@@ -28,3 +28,10 @@ class UserAccount:
             raise Exception("Mensaje demasiado largo")
         self.tweets.append(tweet1)
         self.actualizar_tweets_timeline(tweet1)
+
+    def actualizar_tweets_timeline(self,tweet2):
+        timeline = self.timeline
+        for follower in self.followers:
+            follower(tweet2)
+            timeline.append(follower)
+            
