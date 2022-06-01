@@ -20,3 +20,4 @@ class UserAccount:
             user.followers.append(self)
         else:
             print("Ya sigues a :" + user.nombre)
+#En este caso el metodo follow va a recibir datos de tipo UserAccount
