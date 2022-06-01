@@ -96,5 +96,10 @@ class UserAccount:
     def tweet(self,message:str):
         tweet_to_send = Tweet(message = message,sender=self)
         self.tweets.append(tweet_to_send)
-        self.actualizar_tweets_timeline(tweet_to_send)
-    
+        self._actualizar_tweets_timeline(tweet_to_send)
+    def retweet(self,message:str,tweet_to_retweet:Tweet):
+        if not isinstance(tweet_to_retweet,Tweet):
+            raise Exception("No es un tweet")
+        tweet_to_send = Retweet(message = message, sender = self, tweet_to_retweet = tweet_to_retweet)
+        self.tweets.append(tweet_to_send)
+        self._actualizar_tweets_timeline(tweet_to_send)
