@@ -32,5 +32,8 @@ class UserAccount:
         for follower in self.followers:
             follower
             self.timeline.append(tweet2)
+    
+#Ejercicio 2
+
             
             
