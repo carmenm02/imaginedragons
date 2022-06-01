@@ -103,3 +103,9 @@ class UserAccount:
         tweet_to_send = Retweet(message = message, sender = self, tweet_to_retweet = tweet_to_retweet)
         self.tweets.append(tweet_to_send)
         self._actualizar_tweets_timeline(tweet_to_send)
+    def actualizar_tweets_timeline(self,tweet2):
+        for follower in self.followers:
+            follower
+            self.timeline.append(tweet2)
+    def __repr__(self):
+        return f"Usuario - {self.nombre}"
