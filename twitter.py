@@ -34,6 +34,9 @@ class UserAccount:
             self.timeline.append(tweet2)
     
 #Ejercicio 2
-
-            
-            
+class Tweet:
+    def __init__(self, message:str, sender: UserAccount):
+        if len(message)>140:
+            raise Exception("Mensaje demasiado largo")
+        if not isinstance(sender,UserAccount):
+            raise Exception("El usuario no es válido")
