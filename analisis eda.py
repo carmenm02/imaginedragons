@@ -8,3 +8,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 import pandas as pd
 import numpy
 import pytz
+
+train_df = pd.read_csv("train.csv")
+test_df = pd.read_csv("test.csv")
+
