@@ -50,9 +50,15 @@ class Tweet:
     def __str__(self):
         return f"Tweet de {self.sender.nombre}. Tweet:{self.message}.Publicado{time.time(int(self.tiempo))}"
 
-class DirectMessage:
+class DirectMessage(Tweet):
     def __init__(self,args,kwargs):
         if "receiver" not in kwargs:
             raise Exception("No se especifica el usuario que recibe el tweet")
         receiver = kwargs.pop('receiver')
+        if not isinstance(receiver,UserAccount):
+            raise Exception("Usuario no valido")
+        self.receiver = receiver
+        super().__init__(*args,**kwargs)
+    def __str__(self):
+        return f"Mensaje directo de {self.sender.nombre}a{self.receiver.nombre}. Tweet: {self.message}.Publicado: {time.time(int(self.tiempo))}"
         
