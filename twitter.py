@@ -21,3 +21,10 @@ class UserAccount:
         else:
             print("Ya sigues a :" + user.nombre)
 #En este caso el metodo follow va a recibir datos de tipo UserAccount
+
+#Ejercicio 1C
+    def tweet(self, tweet1: str):
+        if len(tweet1)>140:
+            raise Exception("Mensaje demasiado largo")
+        self.tweets.append(tweet1)
+        self.actualizar_tweets_timeline(tweet1)
