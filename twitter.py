@@ -1,4 +1,4 @@
-
+import time
         #Ejercicio 1A
 
 class UserAccount:
