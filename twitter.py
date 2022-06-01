@@ -75,3 +75,4 @@ class Retweet(Tweet):
     #2c
     def __str__(self):
         return f"Retweet de {self.sender.nombre}. Tweet: {self.message}. Tweet original: {self.tweet_original.message} Publicado: {time.time(int(self.tiempo))}"
+#El ejercicio 2D lo he creado en otra pagina
