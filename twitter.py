@@ -40,3 +40,9 @@ class Tweet:
             raise Exception("Mensaje demasiado largo")
         if not isinstance(sender,UserAccount):
             raise Exception("El usuario no es válido")
+        
+        self.message = message
+        self.sender = sender
+        self.tiempo = time.time()
+    def __str__(self) -> str:
+        return f"Tweet de {self.sender.nombre}. Tweet:{self.message}.Publicado{time.time(int(self.tiempo))}"
