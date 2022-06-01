@@ -7,5 +7,3 @@
 #Si que deberia modificar la función tweet para que así al enviar un tweet, el usuario pueda crear una base de tipo Tweet.
 #Además de este modo la función seguiría recibiendi una cadana de texto
 #También generaría otra función para retweetear, la cual genere un elemento de tipo retweet.
-
-
