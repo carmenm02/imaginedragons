@@ -93,4 +93,8 @@ class UserAccount:
             user.followers.append(self)
         else:
             print("Ya sigues a :" + user.nombre)
+    def tweet(self,message:str):
+        tweet_to_send = Tweet(message = message,sender=self)
+        self.tweets.append(tweet_to_send)
+        self.actualizar_tweets_timeline(tweet_to_send)
     
