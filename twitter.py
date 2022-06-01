@@ -59,6 +59,7 @@ class DirectMessage(Tweet):
             raise Exception("Usuario no valido")
         self.receiver = receiver
         super().__init__(*args,**kwargs)
+    #2c
     def __str__(self):
         return f"Mensaje directo de {self.sender.nombre}a{self.receiver.nombre}. Tweet: {self.message}.Publicado: {time.time(int(self.tiempo))}"
         
