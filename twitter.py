@@ -30,5 +30,7 @@ class UserAccount:
         self.actualizar_tweets_timeline(tweet1)
     def actualizar_tweets_timeline(self,tweet2):
         for follower in self.followers:
-            follower.timeline.append(tweet2)
+            follower
+            self.timeline.append(tweet2)
+            
             
