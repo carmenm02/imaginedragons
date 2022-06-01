@@ -27,5 +27,12 @@ train_df.info()
 train_df.dropna(inplace=True)
 test_df.info()
 
+#Para el análisis EDA seleccionamos train para analizar sus datos
 
-    
+train_df.head()
+train_df.describe()
+
+fig = go.Figura(go.Funnelarea(
+    text = temp.sentiment,
+    values = temp.text,
+))
