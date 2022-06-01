@@ -1,5 +1,5 @@
 import time
-        #Ejercicio 1A
+#Ejercicio 1A
 
 class UserAccount:
     def __init__(self,nombre: str, email: str):
@@ -11,7 +11,7 @@ class UserAccount:
         self.following = []
         #He elegido para nombre y email cadenas de texto, mientras que para el resto he creado listas. Además he decidido que el nombre sea publico mientras que el email sea privado.
 
-        #Ejercicio 1B
+#Ejercicio 1B
     def follow(self,user):
         if not isinstance(user,UserAccount):
             raise Exception("El usuario no es válido")
@@ -22,7 +22,7 @@ class UserAccount:
             print("Ya sigues a :" + user.nombre)
         #En este caso el metodo follow va a recibir datos de tipo UserAccount
 
-        #Ejercicio 1C
+#Ejercicio 1C
     def tweet(self, tweet1: str):
         if len(tweet1)>140:
             raise Exception("Mensaje demasiado largo")
@@ -32,8 +32,10 @@ class UserAccount:
         for follower in self.followers:
             follower
             self.timeline.append(tweet2)
+    def __repr__(self):
+        return f"Usuario - {self.nombre}"
     
-#Ejercicio 2
+#Ejercicio 2a y b
 class Tweet:
     def __init__(self, message:str, sender: UserAccount):
         if len(message)>140:
@@ -44,5 +46,13 @@ class Tweet:
         self.message = message
         self.sender = sender
         self.tiempo = time.time()
-    def __str__(self) -> str:
+    #2c
+    def __str__(self):
         return f"Tweet de {self.sender.nombre}. Tweet:{self.message}.Publicado{time.time(int(self.tiempo))}"
+
+class DirectMessage:
+    def __init__(self,args,kwargs):
+        if "receiver" not in kwargs:
+            raise Exception("No se especifica el usuario que recibe el tweet")
+        receiver = kwargs.pop('receiver')
+        
