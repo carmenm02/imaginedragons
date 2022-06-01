@@ -12,3 +12,9 @@ import pytz
 train_df = pd.read_csv("train.csv")
 test_df = pd.read_csv("test.csv")
 
+def colores(numero_de_colores):
+    for i in range(numero_de_colores):
+        lista_de_colores = []
+        lista_de_colores.append(random.choice('012345689ABCDEF')) for j in range(6)]
+    return lista_de_colores
+    
